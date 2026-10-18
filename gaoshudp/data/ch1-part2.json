@@ -1,0 +1,268 @@
+{
+  "chapter": "第一章 函数与极限",
+  "sections": [
+    {
+      "id": "sec5",
+      "title": "第五节 极限运算法则",
+      "intro": "<p>本节核心：极限的四则运算法则。若 \\(\\lim f(x)=A\\)，\\(\\lim g(x)=B\\)（均存在），则和、差、积、商的极限分别等于极限的和、差、积、商（商时分母极限非零）。</p><p>提高难度后，重点练习：因式分解、有理化、通分、拆项、多步等价替换的综合运用，不依赖泰勒展开。</p>",
+      "examples": [
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to1}\\frac{x^3-3x+2}{x^4-4x+3}\\)。",
+          "a": "<p>分子：\\(x^3-3x+2=(x-1)^2(x+2)\\)；分母：\\(x^4-4x+3=(x-1)^2(x^2+2x+3)\\)。</p><p>约去 \\((x-1)^2\\)：\\(\\lim_{x\\to1}\\dfrac{x+2}{x^2+2x+3}=\\dfrac{3}{6}=\\dfrac12\\)。</p><p>考点：二重零因子，分解到二阶。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{1+x}+\\sqrt{1-x}-2}{x^2}\\)。",
+          "a": "<p>两次有理化。先乘 \\(\\sqrt{1+x}+\\sqrt{1-x}+2\\)：</p><p>分子 \\(=(\\sqrt{1+x}+\\sqrt{1-x})^2-4=2+2\\sqrt{1-x^2}-4=2(\\sqrt{1-x^2}-1)\\)。</p><p>再由 \\(\\sqrt{1-x^2}-1\\sim-\\dfrac{x^2}{2}\\)，得分子 \\(\\sim -x^2\\)。</p><p>分母有理化因子 \\(\\to4\\)，故原式 \\(=\\lim\\dfrac{-x^2}{4x^2}=-\\dfrac14\\)。考点：有理化 + 等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(\\sqrt[3]{x^3+x^2}-x\\right)\\)。",
+          "a": "<p>令 \\(t=\\dfrac1x\\to0^+\\)，原式 \\(=\\lim_{t\\to0^+}\\dfrac{\\sqrt[3]{1+t}-1}{t}\\)。</p><p>由 \\((1+t)^{1/3}-1\\sim\\dfrac13t\\)，得原式 \\(=\\dfrac13\\)。考点：立方根有理化 / 等价无穷小。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{1+x}\\sqrt{1-x}-1}{x^2}\\)。",
+          "a": "<p>\\(\\sqrt{1+x}\\sqrt{1-x}=\\sqrt{1-x^2}\\)。</p><p>由 \\(\\sqrt{1-x^2}-1\\sim-\\dfrac{x^2}{2}\\)，原式 \\(=-\\dfrac12\\)。考点：等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x^2)}{x\\sin x}\\)。",
+          "a": "<p>分子 \\(\\sim x^2\\)，分母 \\(\\sim x^2\\)，原式 \\(=1\\)。考点：等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\left(\\frac1{x^2}-\\frac1{\\sin^2x}\\right)\\)。",
+          "a": "<p>通分：\\(\\dfrac{\\sin^2x-x^2}{x^2\\sin^2x}\\)。</p><p>由 \\(\\dfrac{\\sin x-x}{x^3}\\to-\\dfrac16\\)，得 \\(\\sin x-x\\sim-\\dfrac{x^3}{6}\\)，\\(\\sin x+x\\sim2x\\)，故分子 \\(\\sim-\\dfrac{x^4}{3}\\)，分母 \\(\\sim x^4\\)，原式 \\(=-\\dfrac13\\)。考点：通分 + 已知极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{n\\to\\infty}\\left(\\frac1{n^2}+\\frac2{n^2}+\\cdots+\\frac n{n^2}\\right)\\)。",
+          "a": "<p>和 \\(=\\dfrac{1+2+\\cdots+n}{n^2}=\\dfrac{n(n+1)}{2n^2}\\to\\dfrac12\\)。考点：求和后求极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(\\frac{x+2}{x+1}\\right)^x\\)。",
+          "a": "<p>\\(\\dfrac{x+2}{x+1}=1+\\dfrac1{x+1}\\)。</p><p>令 \\(t=x+1\\to\\infty\\)，原式 \\(=\\lim\\left(1+\\dfrac1t\\right)^{t-1}=e\\)。考点：第二重要极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-\\sin x}{x^3}\\)。",
+          "a": "<p>\\(\\tan x-\\sin x=\\sin x\\left(\\dfrac1{\\cos x}-1\\right)=\\sin x\\cdot\\dfrac{1-\\cos x}{\\cos x}\\)。</p><p>\\(\\sin x\\sim x\\)，\\(1-\\cos x\\sim\\dfrac{x^2}{2}\\)，\\(\\cos x\\to1\\)，故分子 \\(\\sim\\dfrac{x^3}{2}\\)。</p><p>原式 \\(=\\dfrac12\\)。考点：三角变形 + 等价替换。</p>"
+        },
+        {
+          "q": "设 \\(f\\) 在 \\(x=0\\) 连续，\\(\\displaystyle\\lim_{x\\to0}\\frac{f(x)-1}{x}=2\\)，求 \\(f(0)\\)。",
+          "a": "<p>由极限存在且分母 \\(\\to0\\)，分子必 \\(\\to0\\)，即 \\(f(x)\\to1\\)。</p><p>连续性给出 \\(f(0)=1\\)。考点：极限与连续的联系。</p>"
+        }
+      ]
+    },
+    {
+      "id": "sec6",
+      "title": "第六节 极限存在准则 两个重要极限",
+      "intro": "<p><strong>夹逼准则：</strong>若 \\(g(x)\\le f(x)\\le h(x)\\)，且 \\(\\lim g=\\lim h=A\\)，则 \\(\\lim f=A\\)。</p><p><strong>单调有界准则：</strong>单调递增且有上界（或单调递减且有下界）的数列必有极限。</p><p><strong>两个重要极限：</strong>\\(\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1\\)，\\(\\lim_{x\\to\\infty}(1+\\frac1x)^x=e\\)。</p>",
+      "examples": [
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x-x\\cos x}{x^3}\\)。",
+          "a": "<p>拆项：\\(\\dfrac{\\sin x-x}{x^3}+\\dfrac{x(1-\\cos x)}{x^3}\\)。</p><p>第一项 \\(\\to-\\dfrac16\\)，第二项 \\(=\\dfrac{1-\\cos x}{x^2}\\to\\dfrac12\\)。</p><p>原式 \\(=\\dfrac13\\)。考点：拆项 + 重要极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-\\sin x}{x^3}\\)。",
+          "a": "<p>\\(\\tan x-\\sin x=\\sin x\\cdot\\dfrac{1-\\cos x}{\\cos x}\\sim x\\cdot\\dfrac{x^2}{2}=\\dfrac{x^3}{2}\\)。</p><p>原式 \\(=\\dfrac12\\)。考点：三角变形 + 等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\arcsin x-x}{x^3}\\)。",
+          "a": "<p>令 \\(t=\\arcsin x\\)，则 \\(x=\\sin t\\)，\\(t\\to0\\)。</p><p>原式 \\(=\\lim_{t\\to0}\\dfrac{t-\\sin t}{\\sin^3t}=\\lim\\dfrac{t-\\sin t}{t^3}\\cdot\\left(\\dfrac{t}{\\sin t}\\right)^3\\)。</p><p>由 \\(\\dfrac{\\sin t-t}{t^3}\\to-\\dfrac16\\)，故原式 \\(=\\dfrac16\\)。考点：换元 + 已知极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-x}{x^3}\\)。",
+          "a": "<p>用 \\(\\tan x-x=\\dfrac{\\sin x-x\\cos x}{\\cos x}\\)，由上一题结果 \\(\\sin x-x\\cos x\\sim\\dfrac{x^3}{3}\\)。</p><p>故原式 \\(=\\dfrac13\\)。考点：变形 + 已知极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}x^2\\left(1-\\cos\\frac1x\\right)\\)。",
+          "a": "<p>令 \\(t=\\dfrac1x\\to0\\)，原式 \\(=\\lim_{t\\to0}\\dfrac{1-\\cos t}{t^2}=\\dfrac12\\)。考点：换元 + 等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\left(\\frac{\\sin x}{x}\\right)^{1/x^2}\\)。",
+          "a": "<p>取对数：\\(\\ln y=\\dfrac{\\ln(\\sin x/x)}{x^2}\\)。</p><p>由 \\(\\dfrac{\\sin x-x}{x^3}\\to-\\dfrac16\\)，得 \\(\\ln(\\sin x/x)\\sim-\\dfrac{x^2}{6}\\)，故 \\(\\ln y\\to-\\dfrac16\\)，\\(y\\to e^{-1/6}\\)。考点：取对数 + 已知极限。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(\\frac{x+1}{x-1}\\right)^{x^2}\\)。",
+          "a": "<p>\\(\\dfrac{x+1}{x-1}=1+\\dfrac2{x-1}\\)。</p><p>取对数：\\(x^2\\ln\\left(1+\\dfrac2{x-1}\\right)\\sim x^2\\cdot\\dfrac2{x-1}\\sim2x\\to+\\infty\\)。</p><p>故原式 \\(\\to+\\infty\\)。考点：第二重要极限 + 对数。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}(1+x)^{1/x}\\cdot e^{-1/x}\\)。",
+          "a": "<p>原式 \\(=\\lim e^{\\frac{\\ln(1+x)}{x}-\\frac1x}=\\lim e^{\\frac{\\ln(1+x)-x}{x}}\\)。</p><p>由 \\(\\dfrac{\\ln(1+x)-x}{x}\\to0\\)（一阶），故原式 \\(=e^0=1\\)。考点：重要极限 + 指数变形。</p>"
+        },
+        {
+          "q": "用夹逼准则证明 \\(\\displaystyle\\lim_{n\\to\\infty}\\sqrt[n]{n}=1\\)。",
+          "a": "<p>当 \\(n\\ge2\\) 时，令 \\(\\sqrt[n]{n}=1+h_n\\)（\\(h_n>0\\)）。</p><p>由二项式：\\(n=(1+h_n)^n\\ge1+nh_n+\\dfrac{n(n-1)}{2}h_n^2\\ge\\dfrac{n(n-1)}{2}h_n^2\\)。</p><p>故 \\(0<h_n\\le\\sqrt{\\dfrac{2}{n-1}}\\to0\\)，夹逼得 \\(h_n\\to0\\)，即 \\(\\sqrt[n]{n}\\to1\\)。考点：夹逼准则。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x)-x}{x^2}\\)。",
+          "a": "<p>由 \\(\\dfrac{\\ln(1+x)-x}{x^2}\\to-\\dfrac12\\)（可用夹逼或已知结果，第一章可接受）。</p><p>原式 \\(=-\\dfrac12\\)。考点：等价替换到二阶。</p>"
+        }
+      ]
+    },
+    {
+      "id": "sec7",
+      "title": "第七节 无穷小的比较",
+      "intro": "<p>设 \\(\\alpha,\\beta\\) 为同一极限过程的无穷小，\\(\\beta\\neq0\\)：</p><ul><li>\\(\\lim\\dfrac{\\alpha}{\\beta}=0\\)：高阶，记 \\(\\alpha=o(\\beta)\\)。</li><li>\\(\\lim\\dfrac{\\alpha}{\\beta}=\\infty\\)：低阶。</li><li>\\(\\lim\\dfrac{\\alpha}{\\beta}=c\\neq0\\)：同阶。</li><li>\\(\\lim\\dfrac{\\alpha}{\\beta}=1\\)：等价，记 \\(\\alpha\\sim\\beta\\)。</li></ul><p><strong>常用等价（\\(x\\to0\\)，仅一阶）：</strong>\\(\\sin x\\sim x\\)，\\(\\tan x\\sim x\\)，\\(\\arcsin x\\sim x\\)，\\(\\arctan x\\sim x\\)，\\(\\ln(1+x)\\sim x\\)，\\(e^x-1\\sim x\\)，\\(1-\\cos x\\sim\\dfrac{x^2}{2}\\)，\\((1+x)^\\alpha-1\\sim\\alpha x\\)。</p>",
+      "examples": [
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-\\sin x}{x^3}\\)。",
+          "a": "<p>\\(\\tan x-\\sin x=\\sin x\\cdot\\dfrac{1-\\cos x}{\\cos x}\\sim x\\cdot\\dfrac{x^2}{2}=\\dfrac{x^3}{2}\\)。</p><p>原式 \\(=\\dfrac12\\)。考点：三角变形 + 等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x^2)-\\ln(1+x)}{x^2}\\)。",
+          "a": "<p>原式 \\(=\\lim\\dfrac{\\ln(1+x^2)}{x^2}-\\lim\\dfrac{\\ln(1+x)}{x^2}\\)。</p><p>第一项 \\(\\to1\\)；第二项 \\(\\dfrac{\\ln(1+x)}{x^2}\\sim\\dfrac{x}{x^2}=\\dfrac1x\\to\\infty\\)，故原式 \\(\\to-\\infty\\)。考点：等价替换 + 无穷大。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}\\)。",
+          "a": "<p>由 \\(e^x-1-x\\sim\\dfrac{x^2}{2}\\)（一阶以上等价，第一章可接受）。</p><p>原式 \\(=\\dfrac12\\)。考点：等价替换到二阶。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{(1+x)^\\alpha-1-\\alpha x}{x^2}\\)。",
+          "a": "<p>由 \\((1+x)^\\alpha-1-\\alpha x\\sim\\dfrac{\\alpha(\\alpha-1)}{2}x^2\\)。</p><p>原式 \\(=\\dfrac{\\alpha(\\alpha-1)}{2}\\)。考点：二项式展开到二阶。</p>"
+        },
+        {
+          "q": "比较 \\(x\\to0\\) 时 \\(\\sin x-\\tan x\\) 与 \\(x^3\\) 的阶。",
+          "a": "<p>\\(\\sin x-\\tan x=\\sin x\\left(1-\\dfrac1{\\cos x}\\right)=-\\sin x\\cdot\\dfrac{1-\\cos x}{\\cos x}\\sim-x\\cdot\\dfrac{x^2}{2}=-\\dfrac{x^3}{2}\\)。</p><p>故与 \\(x^3\\) 同阶，等价于 \\(-\\dfrac{x^3}{2}\\)。考点：无穷小阶的比较。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x-\\arcsin x}{x^3}\\)。",
+          "a": "<p>令 \\(t=\\arcsin x\\)，则 \\(x=\\sin t\\)，原式 \\(=\\lim_{t\\to0}\\dfrac{\\sin(\\sin t)-t}{\\sin^3t}\\)。</p><p>由 \\(\\sin(\\sin t)=\\sin t-\\dfrac{\\sin^3t}{6}+o(\\sin^3t)\\)，分子 \\(\\sim-\\dfrac{t^3}{6}\\)，分母 \\(\\sim t^3\\)，原式 \\(=-\\dfrac16\\)。考点：换元 + 高阶等价。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-x}{\\sin x-x}\\)。",
+          "a": "<p>分子 \\(\\sim\\dfrac{x^3}{3}\\)，分母 \\(\\sim-\\dfrac{x^3}{6}\\)，原式 \\(=-2\\)。考点：高阶等价。</p>"
+        },
+        {
+          "q": "证明：当 \\(x\\to0\\) 时，\\(\\sqrt{1+x}-1\\sim\\dfrac12x\\)。",
+          "a": "<p>\\(\\dfrac{\\sqrt{1+x}-1}{x/2}=\\dfrac{2(\\sqrt{1+x}-1)}{x}=\\dfrac{2(1+x-1)}{x(\\sqrt{1+x}+1)}=\\dfrac{2}{\\sqrt{1+x}+1}\\to1\\)。</p><p>故等价。考点：有理化证明等价。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x^2)}{x\\sin x}\\)。",
+          "a": "<p>分子 \\(\\sim x^2\\)，分母 \\(\\sim x^2\\)，原式 \\(=1\\)。考点：等价替换。</p>"
+        },
+        {
+          "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{1-\\cos x}{x\\sin x}\\)。",
+          "a": "<p>分子 \\(\\sim\\dfrac{x^2}{2}\\)，分母 \\(\\sim x^2\\)，原式 \\(=\\dfrac12\\)。考点：等价替换。</p>"
+        }
+      ]
+    }
+  ],
+  "chapterExamples": [
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to1}\\frac{x^2-3x+2}{x^2-1}\\)。",
+      "a": "<p>分子 \\((x-1)(x-2)\\)，分母 \\((x-1)(x+1)\\)，约去 \\(x-1\\) 得 \\(\\dfrac{x-2}{x+1}\\to-\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin 4x}{\\tan 3x}\\)。",
+      "a": "<p>\\(\\sin4x\\sim4x\\)，\\(\\tan3x\\sim3x\\)，原式 \\(=\\dfrac43\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\frac{2x^3-x+1}{5x^3+2x^2-3}\\)。",
+      "a": "<p>同除 \\(x^3\\)：\\(\\to\\dfrac25\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{1-\\cos 2x}{x\\sin x}\\)。",
+      "a": "<p>\\(1-\\cos2x\\sim2x^2\\)，\\(x\\sin x\\sim x^2\\)，原式 \\(=2\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{n\\to\\infty}\\left(\\sqrt{n+1}-\\sqrt n\\right)\\sqrt n\\)。",
+      "a": "<p>有理化：\\(\\dfrac{\\sqrt n}{\\sqrt{n+1}+\\sqrt n}\\to\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{e^x-1}{\\sin x}\\)。",
+      "a": "<p>\\(e^x-1\\sim x\\)，\\(\\sin x\\sim x\\)，原式 \\(=1\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(1+\\frac1x\\right)^{x+3}\\)。",
+      "a": "<p>\\(=\\left(1+\\dfrac1x\\right)^x\\cdot\\left(1+\\dfrac1x\\right)^3\\to e\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+2x)}{\\sin 3x}\\)。",
+      "a": "<p>\\(\\ln(1+2x)\\sim2x\\)，\\(\\sin3x\\sim3x\\)，原式 \\(=\\dfrac23\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to2}\\frac{x^2-4}{x^2-5x+6}\\)。",
+      "a": "<p>分子 \\((x-2)(x+2)\\)，分母 \\((x-2)(x-3)\\)，原式 \\(=\\dfrac{4}{-1}=-4\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-\\sin x}{x^2\\sin x}\\)。",
+      "a": "<p>分子 \\(\\sim\\dfrac{x^3}{2}\\)，分母 \\(\\sim x^3\\)，原式 \\(=\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(\\sqrt{x^2+2x}-x\\right)\\)。",
+      "a": "<p>有理化：\\(\\dfrac{2x}{\\sqrt{x^2+2x}+x}\\to1\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\arcsin 2x}{x}\\)。",
+      "a": "<p>\\(\\arcsin2x\\sim2x\\)，原式 \\(=2\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to1}\\frac{\\ln x}{x-1}\\)。",
+      "a": "<p>令 \\(t=x-1\\to0\\)，\\(\\ln(1+t)\\sim t\\)，原式 \\(=1\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x-x}{x^3}\\)。",
+      "a": "<p>由 \\(\\dfrac{\\sin x-x}{x^3}\\to-\\dfrac16\\)。原式 \\(=-\\dfrac16\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{n\\to\\infty}\\left(1+\\frac1{2n}\\right)^n\\)。",
+      "a": "<p>\\(=\\left[\\left(1+\\dfrac1{2n}\\right)^{2n}\\right]^{1/2}\\to\\sqrt e\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sin x-x\\cos x}{x^3}\\)。",
+      "a": "<p>拆项：\\(\\dfrac{\\sin x-x}{x^3}+\\dfrac{x(1-\\cos x)}{x^3}\\)。</p><p>第一项 \\(\\to-\\dfrac16\\)，第二项 \\(\\to\\dfrac12\\)，原式 \\(=\\dfrac13\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\tan x-x}{x^3}\\)。",
+      "a": "<p>由 \\(\\dfrac{\\tan x-x}{x^3}\\to\\dfrac13\\)，原式 \\(=\\dfrac13\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}x^2\\left(1-\\cos\\frac1x\\right)\\)。",
+      "a": "<p>令 \\(t=\\dfrac1x\\to0\\)，原式 \\(=\\lim\\dfrac{1-\\cos t}{t^2}=\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\arcsin x-x}{x^3}\\)。",
+      "a": "<p>令 \\(t=\\arcsin x\\)，原式 \\(=\\lim\\dfrac{t-\\sin t}{t^3}\\cdot\\left(\\dfrac{t}{\\sin t}\\right)^3=\\dfrac16\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{1+\\tan x}-\\sqrt{1+\\sin x}}{x\\ln(1+x)}\\)。",
+      "a": "<p>分子有理化：\\(\\dfrac{\\tan x-\\sin x}{\\sqrt{1+\\tan x}+\\sqrt{1+\\sin x}}\\)。</p><p>分子 \\(\\sim\\dfrac{x^3}{2}\\)，分母 \\(\\sim x^2\\)，有理化因子 \\(\\to2\\)，原式 \\(=0\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\left(\\frac1x-\\frac1{e^x-1}\\right)\\)。",
+      "a": "<p>通分：\\(\\dfrac{e^x-1-x}{x(e^x-1)}\\)。分子 \\(\\sim\\dfrac{x^2}{2}\\)，分母 \\(\\sim x^2\\)，原式 \\(=\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\cos(\\sin x)-1}{x^2}\\)。",
+      "a": "<p>\\(\\cos(\\sin x)-1\\sim-\\dfrac{\\sin^2x}{2}\\sim-\\dfrac{x^2}{2}\\)，原式 \\(=-\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{e^{\\tan x}-e^{\\sin x}}{x^3}\\)。",
+      "a": "<p>提取 \\(e^{\\sin x}\\)：\\(e^{\\sin x}(e^{\\tan x-\\sin x}-1)\\)。</p><p>\\(e^{\\tan x-\\sin x}-1\\sim\\tan x-\\sin x\\sim\\dfrac{x^3}{2}\\)，\\(e^{\\sin x}\\to1\\)，原式 \\(=\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{x-\\sin x}{x^2(e^x-1)}\\)。",
+      "a": "<p>分子 \\(\\sim\\dfrac{x^3}{6}\\)，分母 \\(\\sim x^3\\)，原式 \\(=\\dfrac16\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to\\infty}\\left(\\frac{x^2+1}{x^2-1}\\right)^{x^2}\\)。",
+      "a": "<p>底数 \\(=1+\\dfrac2{x^2-1}\\)，取对数：\\(x^2\\ln\\left(1+\\dfrac2{x^2-1}\\right)\\sim x^2\\cdot\\dfrac2{x^2-1}\\to2\\)，原式 \\(=e^2\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{n\\to\\infty}\\left(\\frac1{n+1}+\\frac1{n+2}+\\cdots+\\frac1{2n}\\right)\\)。",
+      "a": "<p>夹逼：\\(\\dfrac{n}{2n}\\le S_n\\le\\dfrac{n}{n+1}\\)，两端均 \\(\\to\\dfrac12\\)，故 \\(S_n\\to\\dfrac12\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x^2)}{x\\sin x}\\)。",
+      "a": "<p>分子 \\(\\sim x^2\\)，分母 \\(\\sim x^2\\)，原式 \\(=1\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{n\\to\\infty}\\left(1+\\frac2n\\right)^{3n}\\)。",
+      "a": "<p>\\(=\\left[\\left(1+\\dfrac2n\\right)^{n/2}\\right]^6\\to e^6\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{1+2x}-1}{\\sin x}\\)。",
+      "a": "<p>分子 \\(\\sim x\\)，分母 \\(\\sim x\\)，原式 \\(=1\\)。</p>"
+    },
+    {
+      "q": "求 \\(\\displaystyle\\lim_{x\\to0}\\frac{1-\\cos x}{x\\tan x}\\)。",
+      "a": "<p>分子 \\(\\sim\\dfrac{x^2}{2}\\)，分母 \\(\\sim x^2\\)，原式 \\(=\\dfrac12\\)。</p>"
+    }
+  ]
+}
